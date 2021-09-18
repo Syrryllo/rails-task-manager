@@ -1,11 +1,20 @@
-<h1> Hello <h1>
+<h1> My Tasks <h1>
 
 <ul> 
 
   <% @tasks.each do |task| %> 
     <li>
-      <%= task.title%> : <%= task.details%> Completed: <%= task.completed%>  
+      <%= link_to task.title, task_path(task) %> : Completed: <%= task.completed%>   
     <li>
   <% end %>
+
+
+<button   type="button" 
+          class="btn btn-success" 
+          style="text-decoration:none;"> 
+          
+          <%= link_to "Add a new task", new_task_path %>
+</button>
+
 
 <ul>
